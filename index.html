@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,6 +11,7 @@
       background-color: #f5f5f5;
       color: #333;
     }
+
     header {
       background-color: #1e4cd3;
       padding: 15px 20px;
@@ -20,19 +20,23 @@
       align-items: center;
       color: white;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     .container {
       text-align: center;
       padding: 40px 20px;
     }
+
     .container img {
       width: 200px;
       height: 200px;
@@ -40,6 +44,7 @@
       object-fit: cover;
       margin-bottom: 20px;
     }
+
     .university {
       background-color: #fff;
       padding: 30px;
@@ -48,24 +53,30 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     .university h2 {
       color: #1e4cd3;
     }
+
     .prof-list {
       text-align: left;
       max-width: 600px;
       margin: 20px auto;
     }
+
     .prof-list li {
       margin: 8px 0;
     }
+
     .prof-list a {
       color: #1e4cd3;
       text-decoration: none;
     }
+
     .prof-list a:hover {
       text-decoration: underline;
     }
+
     .modal {
       display: none;
       position: fixed;
@@ -77,6 +88,7 @@
       overflow: auto;
       background-color: rgba(0, 0, 0, 0.5);
     }
+
     .modal-content {
       background-color: #fff;
       margin: 5% auto;
@@ -85,11 +97,13 @@
       width: 80%;
       max-width: 900px;
     }
+
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
     }
+
     .contact-card {
       background: #f0f0f0;
       border-radius: 12px;
@@ -97,6 +111,7 @@
       padding: 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
     .circle {
       background-color: #ccc;
       width: 70px;
@@ -107,16 +122,19 @@
       font-weight: bold;
       color: #1e4cd3;
     }
+
     .close {
       float: right;
       font-size: 28px;
       font-weight: bold;
       cursor: pointer;
     }
+
     .pagination {
       text-align: center;
       margin-top: 20px;
     }
+
     .pagination button {
       background-color: #1e4cd3;
       color: white;
@@ -129,6 +147,99 @@
   </style>
 </head>
 <body>
-  <!-- HTML body content se omitirá aquí para brevedad, será incluido en el archivo final -->
+  <header>
+    <div><strong>Evans Vizcarra</strong></div>
+    <nav>
+      <a href="https://www.canva.com/design/DAGqP9aYvxY/BSEKB1OomsIQheQIsXyt0w/view" target="_blank">Curriculum</a>
+      <a href="#" target="_blank">LinkedIn</a>
+      <a href="https://issuu.com/ucsp/docs/malla-curricular-adm-finanzas-23-07-2020" target="_blank">Malla Curricular</a>
+      <a href="#" onclick="document.getElementById('contactModal').style.display='block'">Contactos</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <a href="https://ibb.co/2Y1gLb0W" target="_blank">
+      <img src="https://i.ibb.co/2Y1gLb0W/perfil.jpg" alt="Foto de Evans">
+    </a>
+    <p>Hola, soy Evans Mathias Vizcarra Mamani, soy un joven estudiante de la carrera de Administración de Empresas en la Universidad Católica San Pablo, cursando el sexto ciclo con sólida experiencia en atención al cliente y habilidad para trabajar bajo presión. Me destaco por mi organización y compromiso en cada tarea que realizo. Mi formación y mi enfoque proactivo me permiten brindar un servicio de calidad, adaptándome rápidamente a las necesidades del entorno laboral.</p>
+  </div>
+
+  <div class="university">
+    <h2>Universidad Católica San Pablo (UCSP)</h2>
+    <p>Actualmente estoy llevando los siguientes cursos:</p>
+    <ul class="prof-list">
+      <li>Historia de Occidente II - Profesora: Rosmery Debora Postigo Quiroz De Bocchio</li>
+      <li>Estadística para los Negocios - Profesor: Daniel Huanca Mosaja</li>
+      <li>Introducción a la Ciencia de la Computación - Profesor: <a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank">Ernesto Cuadros</a></li>
+      <li>Investigación de Operaciones - Profesor: Jorge Luis Chambi Mamani</li>
+      <li>Liderazgo - Profesor: <a href="https://www.linkedin.com/in/pablo-nu%C3%B1ez-saija-08b892174/" target="_blank">Pablo Núñez</a></li>
+      <li>Macroeconomía - Profesora: <a href="https://www.linkedin.com/in/patricia-saavedra-pinto-2aab38102/" target="_blank">Patricia Saavedra</a></li>
+      <li>Música y Artes Visuales - Profesor: <a href="https://www.linkedin.com/in/%C3%B3scar-roberto-ball%C3%B3n-diaz-520897193/" target="_blank">Óscar Ballón</a> y Profesora: <a href="https://www.linkedin.com/in/mar%C3%ADa-eugenia-cano-aguirre-42b94660/" target="_blank">María Cano</a></li>
+    </ul>
+  </div>
+
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('contactModal').style.display='none'">&times;</span>
+      <h2 style="text-align:center">Contactos:</h2>
+      <div class="contact-grid" id="contactGrid">
+        <!-- Contactos cargados con JavaScript -->
+      </div>
+      <div class="pagination">
+        <button onclick="prevPage()">Anterior</button>
+        <button onclick="nextPage()">Siguiente</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const contacts = [
+      { name: "Jesús Franklin Hilarión Gallegos", url: "https://franklinhilarion.github.io/franklinhilarion/" },
+      { name: "María Fernanda Apaza Meza", url: "https://mariafernandaapazameza.github.io/Maria-Fernanda-Apaza-Meza/" },
+      { name: "María Alesandra Quinto Gonza", url: "https://mariaquintog.github.io/" },
+      { name: "Joaquín Carlos Huamani Arroyo", url: "https://joaquin200712.github.io/" },
+      { name: "Krislet Yahaira Juarez Arce", url: "https://krisletyahairajuarezarce.github.io/Krislet-Yahaira-Juarez-Arce/" },
+      { name: "Alvaro Enrique Apaza Luque", url: "https://alvaroenriqueapazaluque.github.io/AlvaroApazaLuque.github.io/" },
+      { name: "María Jose Montoya Cardenas", url: "https://maria-035.github.io/maria.montoya.cardenas-/" },
+      { name: "Piero Polar Salazar", url: "https://crimsonkiller18.github.io/Piero-Polar-Salazar/" },
+      { name: "Nicole Brigitte Rodriguez Alvarez", url: "https://nicole131102.github.io/Mi-pagina-web/" }
+    ];
+
+    let currentPage = 0;
+    const pageSize = 6;
+
+    function renderContacts() {
+      const start = currentPage * pageSize;
+      const end = start + pageSize;
+      const pageContacts = contacts.slice(start, end);
+      const container = document.getElementById('contactGrid');
+      container.innerHTML = '';
+      pageContacts.forEach(contact => {
+        const card = document.createElement('div');
+        card.className = 'contact-card';
+        card.innerHTML = `
+          <div class="circle">Foto</div>
+          <a href="${contact.url}" target="_blank">${contact.name}</a>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function nextPage() {
+      if ((currentPage + 1) * pageSize < contacts.length) {
+        currentPage++;
+        renderContacts();
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 0) {
+        currentPage--;
+        renderContacts();
+      }
+    }
+
+    renderContacts();
+  </script>
 </body>
 </html>
